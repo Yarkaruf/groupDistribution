@@ -106,8 +106,45 @@ def group_size_check(groups, groups_sizes, groups_number):
 			groups[subject+str(i+2)] = groups.pop("subj")
 	return(groups)
 
-def group_count_check(groups, groups_number):
-	pass
+#Проверка количества групп по предмету - если больше нужного, то удаление последней группы и распределение её членов по другим предметам по 3-ему выбору
+#groups - группа[ученик,ученик],groups_number - счетчик групп
+def group_count_check(groups, groups_number,groups_sizes):
+  another = {}
+  schetchik = 0
+  group = ""
+  #проход по группам
+  for i in list(groups_number):
+    #пока количество груп > макс размера
+    while(groups_number[i]>groups_sizes[i][1]):
+      #проверка на лишние действия
+      if(groups_number[i]>1):
+        group=i+str(groups_number[i])
+      else: group=i
+      if(groups[group]!=None and group in groups.keys()):
+        #обход всех учеников
+        for j in list(json):
+          #обход всех учеников в группе
+          for k in range(len(groups[group])):
+            #пока совпадении вытаскиваем запасную группу и имя 
+            if(json[j]["name"] == groups[group][k]):
+              name_group=json[j]["turn3"]
+              name=json[j]["name"]
+              #Если количество человек в группе + 1 > размера макс или группа пустая
+              if(len(groups[name_group])+1<groups_sizes[name_group][0] or groups[name_group]==[]):
+                groups[name_group].append(name)
+              #Если возможно добавить группу то добавляем
+              elif(groups_sizes[name_group][1]>groups_number[name_group]+1):
+                groups.update({name_group+str(groups_number[name_group]+1):name})
+                groups_number[name_group]+=1
+              else:
+                 print("Невозможно группа переполнена")
+                 another.update({schetchik : name})
+                 schetchik+=1
+      #Удаление лишней группы, убираем ее из счетчика,  
+      groups.pop(group)
+      groups_number[i]-=1
+  #Возращает группу another id : name те кто выбрал резервную группу но она заполнена
+  return another
 
 
 student_lessons = count_of_lessons_list_create(json)
