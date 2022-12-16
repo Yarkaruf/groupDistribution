@@ -34,6 +34,7 @@ function App() {
     future: 0,
     futureKF: 0
   });
+  const [loader, setLoader] = useState(false);
 
   const obj = {
     data: [],
@@ -121,6 +122,136 @@ function App() {
         groups.unknown.push(e)
       }
     })
+    distributionWave2()
+  }
+  const distributionWave2 = () => {
+
+    groups.unknown.map(e => {
+      if (e.choice2 === "Геодезия" && groups.geo.length < groupsSize.geo * groupsSize.geoKF) {
+        groups.geo.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === 'Основы программирования на PYTHON' && groups.python.length < groupsSize.python * groupsSize.python) {
+        groups.python.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === 'Весёлый китайский язык' && groups.china.length < groupsSize.china * groupsSize.chinaKF) {
+        groups.china.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === 'Современная энергетика' && groups.energ.length < groupsSize.energ * groupsSize.energKF) {
+        groups.energ.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === '3D-моделирование в программе Blender' && groups.blender.length < groupsSize.blender * groupsSize.blenderKF) {
+        groups.blender.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === "Основы рыночных механизмов" && groups.shop.length < groupsSize.shop * groupsSize.shopKF) {
+        groups.shop.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === "Технологическое предпринимательство" && groups.business.length < groupsSize.business * groupsSize.businessKF) {
+        groups.business.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === "Инженерный дизайн в программе Компас" && groups.compass.length < groupsSize.compass * groupsSize.compassKF) {
+        groups.compass.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === "Будущее науки: янглийский язык для международных образовательных проектов" && groups.future.length < groupsSize.future * groupsSize.futureKF) {
+        groups.future.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === "Инженерная графика" && groups.graphics.length < groupsSize.graphics * groupsSize.graphicsKF) {
+        groups.graphics.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === "Методы и средства измерений в радиоэлектронных системах" && groups.radio.length < groupsSize.radio * groupsSize.radioKF) {
+        groups.radio.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === "Экспериментальная химия" && groups.chemistry.length < groupsSize.chemistry * groupsSize.chemistryKF) {
+        groups.chemistry.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === "Цифровое моделирование городской среды" && groups.digitalSimulation.length < groupsSize.digitalSimulation * groupsSize.digitalSimulationKF) {
+        groups.digitalSimulation.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice2 === "Электроника и схемотехника" && groups.electronics.length < groupsSize.electronics * groupsSize.electronicsKF) {
+        groups.electronics.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else {
+        console.log('второй тест')
+      }
+    })
+    distributionWave3()
+  }
+  const distributionWave3 = () => {
+    groups.unknown.map(e => {
+      if (e.choice3 === "Геодезия" && groups.geo.length < groupsSize.geo * groupsSize.geoKF) {
+        groups.geo.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === 'Основы программирования на PYTHON' && groups.python.length < groupsSize.python * groupsSize.python) {
+        groups.python.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === 'Весёлый китайский язык' && groups.china.length < groupsSize.china * groupsSize.chinaKF) {
+        groups.china.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === 'Современная энергетика' && groups.energ.length < groupsSize.energ * groupsSize.energKF) {
+        groups.energ.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === '3D-моделирование в программе Blender' && groups.blender.length < groupsSize.blender * groupsSize.blenderKF) {
+        groups.blender.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === "Основы рыночных механизмов" && groups.shop.length < groupsSize.shop * groupsSize.shopKF) {
+        groups.shop.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === "Технологическое предпринимательство" && groups.business.length < groupsSize.business * groupsSize.businessKF) {
+        groups.business.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === "Инженерный дизайн в программе Компас" && groups.compass.length < groupsSize.compass * groupsSize.compassKF) {
+        groups.compass.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === "Будущее науки: янглийский язык для международных образовательных проектов" && groups.future.length < groupsSize.future * groupsSize.futureKF) {
+        groups.future.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === "Инженерная графика" && groups.graphics.length < groupsSize.graphics * groupsSize.graphicsKF) {
+        groups.graphics.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === "Методы и средства измерений в радиоэлектронных системах" && groups.radio.length < groupsSize.radio * groupsSize.radioKF) {
+        groups.radio.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === "Экспериментальная химия" && groups.chemistry.length < groupsSize.chemistry * groupsSize.chemistryKF) {
+        groups.chemistry.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === "Цифровое моделирование городской среды" && groups.digitalSimulation.length < groupsSize.digitalSimulation * groupsSize.digitalSimulationKF) {
+        groups.digitalSimulation.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else if (e.choice3 === "Электроника и схемотехника" && groups.electronics.length < groupsSize.electronics * groupsSize.electronicsKF) {
+        groups.electronics.push(e)
+        groups.unknown = (groups.unknown.filter((value) => { return value.email !== e.email }))
+      }
+      else {
+        console.log('третий тест')
+      }
+    })
+    console.log(groups, obj.data.length)
   }
 
   function inputHandler(e) {
@@ -132,135 +263,144 @@ function App() {
   }
   return (
     <>
-      <form>
-        <div>
-          <label htmlFor="blender">3D-моделирование в программе Blender</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="blender" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="blenderKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="business">Технологическое предпринимательство</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="business" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="businessKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="chemistry">Экспериментальная химия</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="chemistry" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="chemistryKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="china">Весёлый китайский язык</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="china" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="chinaKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="compass">Инженерный дизайн в программе Компас</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="compass" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="compassKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="digitalSimulation">Цифровое моделирование городской среды</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="digitalSimulation" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="digitalSimulationKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="electronics">Электроника и схемотехника</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="electronics" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="electronicsKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="energ">Современная энергетика</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="energ" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="energKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="geo">Геодезия</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="geo" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="geoKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="graphics">Инженерная графика</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="graphics" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="graphicsKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="python">Основы программирования на PYTHON</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="python" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="pythonKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="radio">Методы и средства измерений в радиоэлектронных системах</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="radio" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="radioKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="shop">Основы рыночных механизмов</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="shop" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="shopKF" type="text" />
-        </div>
-        <div>
-          <label htmlFor="future">Будущее науки: янглийский язык для международных образовательных проектов</label>
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество учеников в группе" id="future" type="text" />
-          <input
-            onChange={(e) => { inputHandler(e) }}
-            required placeholder="Колличество групп" id="futureKF" type="text" />
-        </div>
-      </form>
-      <button onClick={distribution}>Рассчитать</button>
+      {loader == false &&
+        <>
+          <form>
+            <div>
+              <label htmlFor="blender">3D-моделирование в программе Blender</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="blender" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="blenderKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="business">Технологическое предпринимательство</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="business" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="businessKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="chemistry">Экспериментальная химия</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="chemistry" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="chemistryKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="china">Весёлый китайский язык</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="china" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="chinaKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="compass">Инженерный дизайн в программе Компас</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="compass" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="compassKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="digitalSimulation">Цифровое моделирование городской среды</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="digitalSimulation" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="digitalSimulationKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="electronics">Электроника и схемотехника</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="electronics" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="electronicsKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="energ">Современная энергетика</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="energ" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="energKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="geo">Геодезия</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="geo" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="geoKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="graphics">Инженерная графика</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="graphics" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="graphicsKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="python">Основы программирования на PYTHON</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="python" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="pythonKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="radio">Методы и средства измерений в радиоэлектронных системах</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="radio" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="radioKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="shop">Основы рыночных механизмов</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="shop" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="shopKF" type="text" />
+            </div>
+            <div>
+              <label htmlFor="future">Будущее науки: янглийский язык для международных образовательных проектов</label>
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество учеников в группе" id="future" type="text" />
+              <input
+                onChange={(e) => { inputHandler(e) }}
+                required placeholder="Колличество групп" id="futureKF" type="text" />
+            </div>
+          </form>
+          <button onClick={() => { distribution(); setLoader(true) }}>Рассчитать</button>
+        </>
+      }
+      {loader == true &&
+        <>
+          Собираем файл...
+        </>
+      }
     </>
   );
 }
